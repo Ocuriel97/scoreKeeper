@@ -36,7 +36,10 @@ p2B.addEventListener('click', function(){
 });
 
 r.addEventListener('click', function(){
-  console.log('clicked');
+  reset()
+});
+
+function reset () {
   gameOver = false;
   p1Score = 0;
   p2Score = 0;
@@ -44,8 +47,10 @@ r.addEventListener('click', function(){
   p2S.textContent ='0';
   p1S.classList.remove('winner');
   p2S.classList.remove('winner');
-});
+};
 
 input.addEventListener('change', function(){
-  alert('changed');
+  num.textContent = input.value;
+  winningScore = Number(input.value);
+  reset();
 });
